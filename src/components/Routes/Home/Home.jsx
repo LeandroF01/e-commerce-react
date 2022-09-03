@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../../store/slices/products.slice";
 import { CardHome } from "./CardHome/CardHome";
+import "./CardHome/styleHome.css";
 
 const Home = () => {
   const dispatch = useDispatch();

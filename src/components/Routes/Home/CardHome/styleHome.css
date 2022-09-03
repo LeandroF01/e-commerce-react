@@ -1,0 +1,95 @@
+.home {
+  display: flex;
+  justify-content: center;
+}
+
+.home__container-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 70em;
+  margin: 10em 0;
+  gap: 1.5em;
+}
+
+.card-home__header {
+  width: 100%;
+  height: 15em;
+}
+.card-home {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 20em;
+  height: 26em;
+  border: 1px solid var(--bd-grey-card);
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+.card-home:hover {
+  box-shadow: var(--shadow-elevation);
+}
+
+.card-home__image {
+  display: block;
+  width: 80%;
+  height: 80%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: 1em auto;
+}
+
+.card-home__info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.card-home__btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 5em;
+  height: 5em;
+  background: linear-gradient(
+    298deg,
+    rgba(138, 89, 253, 0.744) 9%,
+    rgba(80, 170, 255, 0.819) 59%
+  );
+  color: white;
+  font-weight: 600;
+  border-radius: 2em 0 0 0;
+  border: none;
+  cursor: pointer;
+}
+.card-home__btn:hover {
+  background: linear-gradient(
+    298deg,
+    rgba(138, 89, 253, 0.988) 9%,
+    rgba(80, 170, 255, 0.937) 59%
+  );
+}
+
+.fa-plus {
+  font-size: 2em;
+  font-weight: 100;
+}
+
+.card-home__title {
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: 600;
+}
+
+.card-home__price {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+}
+.card-home__price-label {
+  color: grey;
+  font-weight: 300;
+}
+.card-home__price-value {
+  font-size: 1.1em;
+  font-weight: 600;
+}

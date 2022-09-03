@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+:root {
+  --cl-violet: rgb(99, 38, 255);
+  --cl-white_nav: rgb(249, 248, 248);
+
+  /*<-- Header Navbar -->*/
+  --cl-violet: rgb(99, 38, 255);
+  --cl-white_nav: rgb(255, 255, 255);
+  --cl-violet_nav__hover: rgba(122, 75, 242, 0.174);
+
+  --shadow-color: 0deg 0% 60%;
+
+  --shadow-elevation-medium: 0px 0.3px 0.3px hsl(var(--shadow-color) / 0.47),
+    0px 0.8px 0.8px -1px hsl(var(--shadow-color) / 0.43),
+    0px 2.2px 2.3px -2px hsl(var(--shadow-color) / 0.39),
+    0.1px 5.6px 5.8px -3px hsl(var(--shadow-color) / 0.34);
+
+  --shadow-elevation: 0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.3),
+    0.9px 1px 1.5px -0.8px hsl(var(--shadow-color) / 0.3),
+    2.2px 2.5px 3.7px -1.7px hsl(var(--shadow-color) / 0.3),
+    5.4px 6px 9.1px -2.5px hsl(var(--shadow-color) / 0.3);
+
+  /*<-- Colors icon -->*/
+  --cl-grey-icon: rgb(123, 123, 124);
+  --cl-grey-icon__hover: rgb(36, 36, 36);
+
+  /*<-- Cards Products  -->*/
+  --bd-grey-card: rgb(215, 215, 218);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+}

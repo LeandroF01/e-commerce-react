@@ -1,28 +1,29 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "./image/logo.png";
+import "./styleHeader.css";
 
 export const Header = () => {
   return (
     <header className="header">
-      <NavLink to="">
-        <h1 className="header__title">E-comerce</h1>
+      <NavLink to="/">
+        <img className="header__logo" src={logo} />
       </NavLink>
 
       <nav className="header__nav">
         <ul className="header__list">
           <li className="header__item">
-            <NavLink
-              to="/login"
-              //   className={({ isActive }) => isActive && "active-link"}
-            >
-              Login
+            <NavLink to="/login">
+              <i class="fa-regular fa-user"></i>
             </NavLink>
           </li>
           <li className="header__item">
-            <NavLink to="/purchases">Purchases</NavLink>
+            <NavLink to="/purchases">
+              <i class="fa-regular fa-credit-card"></i>
+            </NavLink>
           </li>
           <li className="header__item">
-            <h2>Cart</h2>
+            <i class="fa-solid fa-bag-shopping"></i>
           </li>
         </ul>
       </nav>

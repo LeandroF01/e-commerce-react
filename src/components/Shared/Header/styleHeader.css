@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--cl-white_nav);
+  box-shadow: var(--shadow-elevation-medium);
+  position: fixed;
+  width: 100%;
+  height: 5em;
+  margin: 0 1em;
+  z-index: 1;
+}
+.header__logo {
+  width: 11em;
+  margin-left: 1em;
+}
+.header__list {
+  display: flex;
+  height: 5em;
+}
+.header__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 5em;
+}
+.header__item:hover {
+  background: var(--cl-violet_nav__hover);
+}
+
+.fa-regular,
+.fa-solid {
+  font-size: 1.4em;
+  color: var(--cl-grey-icon);
+  cursor: pointer;
+}
+.fa-regular:hover {
+  color: var(--cl-grey-icon__hover);
+}
+.fa-solid:hover {
+  color: var(--cl-grey-icon__hover);
+}
