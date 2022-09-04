@@ -1,0 +1,123 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-white);
+  opacity: 0.8;
+  background-image: radial-gradient(
+    rgb(99, 38, 255) 0.5px,
+    rgb(249, 248, 248) 0.5px
+  );
+  background-size: 10px 10px;
+}
+
+.login__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-white);
+  width: 25em;
+  height: 35em;
+  border-radius: 0.3em;
+  border: 0.1em solid var(--cl-border__login);
+  box-shadow: var(--shadow-elevation-login);
+}
+.login__title {
+  color: var(--cl-text-grey);
+  text-align: center;
+  font-size: 1.5em;
+  margin: 1em;
+}
+.login__container-example {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(91, 176, 255, 0.392);
+  color: var(--cl-text-grey);
+  border-radius: 0.3em;
+  margin: 0 2em;
+}
+.container-example {
+  margin: 1em;
+}
+.container-example__list {
+  font-size: 0.9em;
+}
+.login__container-example-tittle {
+  font-size: 1.2em;
+  margin: 1em 0 0 0;
+}
+
+.login__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  margin: 1em 2em;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  height: 1.8em;
+  margin: 1.4em 0;
+  border: none;
+  border-bottom: 1px solid var(--cl-border__line);
+  background: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-label {
+  position: absolute;
+  font-size: 1em;
+  top: 1em;
+  left: 0.2em;
+  color: var(--cl-text-grey);
+  pointer-events: none;
+}
+
+.form-input:focus + .form-label,
+.form-input:valid + .form-label {
+  top: -0.1em;
+  scale: 0.8;
+  animation: 0.5s ease transform;
+  color: var(--cl-text-violet);
+}
+
+@keyframes transform {
+  0% {
+    scale: 1;
+    transform: translateY(0.7em);
+  }
+  100% {
+    scale: 0.8;
+    transform: translateY(-0.7em);
+  }
+}
+
+.login__btn {
+  border: none;
+  height: 2.3em;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--cl-text-white);
+  background: var(--cl-btn);
+  border-radius: 0.2em;
+}
+.login__btn:hover {
+  background: var(--cl-btn__hover);
+}
+
+.login__form-sign {
+  font-size: 0.9em;
+  color: var(--cl-text-grey);
+  margin-left: 2em;
+  margin-bottom: 1em;
+}

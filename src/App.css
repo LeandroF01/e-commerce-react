@@ -4,6 +4,13 @@
   --cl-violet: rgb(99, 38, 255);
   --cl-white_nav: rgb(249, 248, 248);
 
+  --bg-white: rgb(255, 255, 255);
+
+  --cl-text-white: rgb(254, 253, 253);
+  --cl-text-black: rgb(2, 2, 2);
+  --cl-text-grey: rgb(128, 125, 125);
+  --cl-text-violet: rgb(99, 38, 255);
+
   /*<-- Header Navbar -->*/
   --cl-violet: rgb(99, 38, 255);
   --cl-white_nav: rgb(255, 255, 255);
@@ -25,6 +32,11 @@
     -0.9px 0px 1px -0.8px hsl(var(--shadow-color) / 0.36),
     -2.4px 0.1px 2.7px -1.7px hsl(var(--shadow-color) / 0.36),
     -5.8px 0.3px 6.5px -2.5px hsl(var(--shadow-color) / 0.36);
+
+  --shadow-elevation-login: 0.2px 0.3px 0.4px hsl(var(--shadow-color) / 0.36),
+    0.6px 1.1px 1.4px -0.8px hsl(var(--shadow-color) / 0.36),
+    1.6px 2.8px 3.6px -1.7px hsl(var(--shadow-color) / 0.36),
+    3.9px 6.9px 8.9px -2.5px hsl(var(--shadow-color) / 0.36);
 
   /*<-- Colors icon -->*/
   --cl-grey-icon: rgb(123, 123, 124);
@@ -49,6 +61,15 @@
     rgba(138, 89, 253, 0.988) 9%,
     rgba(80, 170, 255, 0.937) 59%
   );
+
+  /*<-- Login -->*/
+
+  --cl-border__login: rgba(163, 163, 163, 0.201);
+
+  --cl-border__line: rgba(163, 163, 163, 0.808);
+
+  /*<-- links -->*/
+  --cl-link: rgb(66, 159, 247);
 }
 
 body {
@@ -63,4 +84,10 @@ li {
   text-decoration: none;
   list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--cl-link);
 }

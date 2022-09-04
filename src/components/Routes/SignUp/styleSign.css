@@ -1,0 +1,57 @@
+.sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-white);
+  opacity: 0.8;
+  background-image: radial-gradient(
+    rgb(99, 38, 255) 0.5px,
+    rgb(249, 248, 248) 0.5px
+  );
+  background-size: 10px 10px;
+}
+
+.sign-up__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-white);
+  width: 25em;
+  height: 35em;
+  border-radius: 0.3em;
+  border: 0.1em solid var(--cl-border__login);
+  box-shadow: var(--shadow-elevation-login);
+}
+.sign-up__tittle {
+  font-size: 1.5em;
+  margin-left: 1em;
+  color: var(--cl-text-grey);
+}
+.sign-up__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 2em;
+}
+
+.sign-up__form-btn {
+  border: none;
+  margin: 1em 0;
+  height: 2.2em;
+  border-radius: 0.2em;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--cl-text-white);
+  background: var(--cl-btn);
+}
+.sign-up__form-btn:hover {
+  background: var(--cl-btn__hover);
+}
+.sign-up__login {
+  font-size: 0.9em;
+  color: var(--cl-text-grey);
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
