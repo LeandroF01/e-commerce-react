@@ -26,7 +26,7 @@ export const CardHome = ({ product }) => {
         </div>
       </div>
       <button className="card-home__btn">
-        <i class="fa-plus"></i>
+        <i className="fa-plus"></i>
       </button>
     </article>
   );

@@ -50,11 +50,7 @@
   bottom: 0;
   width: 5em;
   height: 5em;
-  background: linear-gradient(
-    298deg,
-    rgba(138, 89, 253, 0.744) 9%,
-    rgba(80, 170, 255, 0.819) 59%
-  );
+  background: var(--cl-btn);
   color: white;
   font-weight: 600;
   border-radius: 2em 0 0 0;
@@ -62,11 +58,7 @@
   cursor: pointer;
 }
 .card-home__btn:hover {
-  background: linear-gradient(
-    298deg,
-    rgba(138, 89, 253, 0.988) 9%,
-    rgba(80, 170, 255, 0.937) 59%
-  );
+  background: var(--cl-btn__hover);
 }
 
 .fa-plus {
