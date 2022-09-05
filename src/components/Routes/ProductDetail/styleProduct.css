@@ -1,82 +1,75 @@
-/* .product-detail__article{
+/*...container...*/
+.prodruct-detail__article {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  
-
+  flex-wrap: wrap;
+  max-width: 1000px;
 }
-
-.product-detail{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-} */
-.prodruct-detail__article{
-  float: left;
-  margin: 60px 80px 0 10px;
-}
-.product-detail__header{
+/*...Imagenes...*/
+.product-detail__header {
   float: left;
 }
 .product-detail__img {
   width: 80%;
   height: 100%;
   object-fit: contain;
- 
+  padding: 20px 70px;
 }
-/*...btn, iconos / flechas...*/
-/* .product-detail__left{
-position: absolute;
-top: 50px;
-left: 0;
-border: none;
-background-color:white;
-}
-
-.product-detail__right{
-  position: absolute;
-  right: 0;
-  top: 50px;
-  border: none;
-  background-color:white;
-} */
 /*...title..*/
-.product-detail__title{
+.product-detail__title {
   display: flex;
   justify-content: end;
   align-items: flex-end;
 }
+
+.product-detail__title:hover {
+  color: rgba(138, 89, 253, 0.744);
+}
+/*...text...*/
+.product-detail__description {
+  padding: 120px 20px;
+}
+/*...btn Add to cart...*/
 .product-detail__btn {
-  width: 200px;
+  width: 30em;
   height: 50px;
-  background: linear-gradient(
-    298deg,
-    rgba(138, 89, 253, 0.744) 9%,
-    rgba(80, 170, 255, 0.819) 59%
-  );
+  background: linear-gradient(298deg,
+      rgba(138, 89, 253, 0.744) 9%,
+      rgba(80, 170, 255, 0.819) 59%);
   color: white;
-  border: none;
   cursor: pointer;
   font-size: 20px;
+  border: none;
   border-radius: 5px;
 }
 
 .product-detail__btn:hover {
-  color: black;
-  background-color: rgb(99, 38, 255);
-  ;
+  transform: scale(1.04);
+  transition: transform 200ms ease;
+}
+/*...Contador...*/
+.product-detail__counter{
+  text-align: center;
 }
 
-.product-detail__header{
-display: flex;
-justify-content: center;
-flex-direction: column;
-width: 30em;
-height: auto;
-position: relative;
+.product-detail__minplus{
+font-size: 20px;
+}
+.product-detail__minplus:hover{
+transform: scale(1.04);
+transition: transform 200ms ease;
+}
+.product-detail__one{
+ font-size: 15px;
+ width: 50px;
+ padding: 4.9px ;
+}
+/*...price...*/
+.product-detail__price{
+  font-size: 15px;
+}
+.product-detail__price-title{
+  text-indent: 7em;
+  text-align: center;
+  /* border: 1px solid; */
+ 
 }
