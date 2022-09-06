@@ -1,24 +1,55 @@
 /*...container...*/
 .prodruct-detail__article {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  max-width: 1000px;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
 }
-/*...Imagenes...*/
+.product-detail {
+  width: 21em;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  max-height: 300px;
+  margin-top: 90px;
+  margin-left: 20px;
+}
+.roductp-detail__cash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 150px 0;
+  max-width: 500px;
+  max-height: 700px;
+  margin-left: 7em;
+}
+/* ...Imagenes...*/
 .product-detail__header {
-  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 .product-detail__img {
-  width: 80%;
-  height: 100%;
-  object-fit: contain;
-  padding: 20px 70px;
+  display: inline-block;
+  border: 4px solid transparent;
+  transition: border .3s ease-out;
+  width: 100px;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: transform .3s ease-out;
+  white-space: nowrap;
 }
+
 /*...title..*/
 .product-detail__title {
-  display: flex;
-  justify-content: end;
-  align-items: flex-end;
+  font-size: 1.5em;
+  margin: 50px;
+  
 }
 
 .product-detail__title:hover {
@@ -26,15 +57,43 @@
 }
 /*...text...*/
 .product-detail__description {
-  padding: 120px 20px;
+  font-size: 1em;
 }
-/*...btn Add to cart...*/
+/*...Quantuty/Price...*/
+.product-detail__counter {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 40px;
+  margin: 40px;
+}
+.product-detail__quantity {
+  font-size: 1em;
+  color: rgb(128, 125, 125);
+}
+.product-detail__price {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 20em;
+}
+.product-detail__price-title {
+  font-size: 1em;
+  color: rgb(128, 125, 125);
+}
+/*...btn Add to cart... */
 .product-detail__btn {
   width: 30em;
   height: 50px;
-  background: linear-gradient(298deg,
-      rgba(138, 89, 253, 0.744) 9%,
-      rgba(80, 170, 255, 0.819) 59%);
+  background: linear-gradient(
+    298deg,
+    rgba(138, 89, 253, 0.744) 9%,
+    rgba(80, 170, 255, 0.819) 59%
+  );
   color: white;
   cursor: pointer;
   font-size: 20px;
@@ -45,31 +104,4 @@
 .product-detail__btn:hover {
   transform: scale(1.04);
   transition: transform 200ms ease;
-}
-/*...Contador...*/
-.product-detail__counter{
-  text-align: center;
-}
-
-.product-detail__minplus{
-font-size: 20px;
-}
-.product-detail__minplus:hover{
-transform: scale(1.04);
-transition: transform 200ms ease;
-}
-.product-detail__one{
- font-size: 15px;
- width: 50px;
- padding: 4.9px ;
-}
-/*...price...*/
-.product-detail__price{
-  font-size: 15px;
-}
-.product-detail__price-title{
-  text-indent: 7em;
-  text-align: center;
-  /* border: 1px solid; */
- 
 }
