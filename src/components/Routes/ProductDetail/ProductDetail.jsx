@@ -22,9 +22,7 @@ export const ProductDetail = ({ product }) => {
     <article className="prodruct-detail__article">
       <section className="product-detail">
         <header className="product-detail__header">
-          <Carousel
-            showArrows={true}
-          >
+          <Carousel showArrows={true}>
             <div>
               <img
                 className="product-detail__img"
