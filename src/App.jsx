@@ -6,6 +6,7 @@ import { Purchases } from "./components/Routes/Purchases/Purchases";
 import { ProductDetail } from "./components/Routes/ProductDetail/ProductDetail";
 import { Header } from "./components/Shared/Header/Header";
 import { SignUp } from "./components/Routes/SignUp/SignUp";
+import { useEffect } from "react";
 
 function App() {
   return (

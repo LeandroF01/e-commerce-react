@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+import { useHanddle } from "../../../hooks/useHanddle";
 import logo from "./image/logo.png";
 import { ShoppingCart } from "./ShoppingCart/ShoppingCart";
 import "./styleHeader.css";
 
 export const Header = () => {
-  const [isShoppingCart, setisShoppingCart] = useState(false);
-
-  const handdleOpen = () => {
-    setisShoppingCart(true);
-  };
-  const handdleClose = () => {
-    setisShoppingCart(false);
-  };
+  const { isShoppingCart, handdleOpen, handdleClose } = useHanddle();
 
   return (
     <section className="section__header">
@@ -33,8 +27,8 @@ export const Header = () => {
                 <i className="fa-regular fa-credit-card"></i>
               </NavLink>
             </li>
-            <li className="header__item">
-              <i onClick={handdleOpen} className="fa-solid fa-bag-shopping"></i>
+            <li className="header__item" onClick={handdleOpen}>
+              <i className="fa-solid fa-bag-shopping"></i>
             </li>
           </ul>
         </nav>

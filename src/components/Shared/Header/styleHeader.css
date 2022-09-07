@@ -37,12 +37,11 @@
 .fa-regular,
 .fa-solid {
   font-size: 1.4em;
-  color: var(--cl-grey-icon);
   cursor: pointer;
 }
-.fa-regular:hover {
-  color: var(--cl-grey-icon__hover);
-}
-.fa-solid:hover {
-  color: var(--cl-grey-icon__hover);
+
+.fa-user,
+.fa-credit-card,
+.fa-bag-shopping {
+  color: var(--cl-grey-icon);
 }

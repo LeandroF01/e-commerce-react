@@ -1,6 +1,7 @@
 .home {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .home__container-card {
@@ -8,7 +9,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 70em;
-  margin: 10em 0;
+  margin: 7em auto;
   gap: 1.5em;
 }
 
