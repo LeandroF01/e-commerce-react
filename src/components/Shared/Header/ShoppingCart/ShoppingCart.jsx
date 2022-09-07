@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { CartItem } from "../../../Routes/CartItem/CartItem";
 import "./styleShoppingCart.css";
 
 export const ShoppingCart = () => {
+  const [totalPrice, setTotalPrice] = useState();
+
+  const cartItem = useSelector((state) => state.cartProductsSlice);
+
+  useEffect(() => {
+    let sum = 0;
+    const mapeo = cartItem?.map(
+      (product) => (sum += parseFloat(product.price))
+    );
+    setTotalPrice(
+      Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+      }).format(sum)
+    );
+  }, [cartItem]);
+
   return (
     <section className="section__shopping-cart">
       <div className="shopping-cart ">
@@ -16,7 +35,7 @@ export const ShoppingCart = () => {
           <div className="shopping-cart__total">
             <span className="shopping-cart__info-purchase__title">Total</span>
             <span className="shopping-cart__info-purchase__total-price">
-              $ 000
+              {totalPrice}
             </span>
           </div>
 
