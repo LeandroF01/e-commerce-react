@@ -6,8 +6,18 @@ import { Purchases } from "./components/Routes/Purchases/Purchases";
 import { ProductDetail } from "./components/Routes/ProductDetail/ProductDetail";
 import { Header } from "./components/Shared/Header/Header";
 import { SignUp } from "./components/Routes/SignUp/SignUp";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getAllProducts } from "./store/slices/products.slice";
 
 function App() {
+  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, []);
+
   return (
     <div>
       <Header />
