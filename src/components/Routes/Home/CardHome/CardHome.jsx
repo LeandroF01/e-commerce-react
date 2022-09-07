@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { getIdProducts } from "../../../../store/slices/cartProducts.slice";
 
 export const CardHome = ({ product }) => {
   const navigate = useNavigate();
@@ -7,6 +9,17 @@ export const CardHome = ({ product }) => {
   const handdleClick = () => {
     navigate(`/product/${product.id}`);
   };
+
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    if (localStorage.getItem("token")) {
+      dispatch(getIdProducts(product.id, 1));
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <article className="card-home">
       <div onClick={handdleClick}>
@@ -25,7 +38,7 @@ export const CardHome = ({ product }) => {
           </section>
         </div>
       </div>
-      <button className="card-home__btn">
+      <button onClick={addToCart} className="card-home__btn">
         <i className="fa-plus"></i>
       </button>
     </article>

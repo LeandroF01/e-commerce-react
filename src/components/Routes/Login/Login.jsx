@@ -1,8 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import "./styleLogin.css";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const submit = (data) => {
+    const URL = "https://ecommerce-api-react.herokuapp.com/api/v1/users/login";
+    fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem("token", data.data.token);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <section className="login">
       <article className="login__card">
@@ -22,9 +46,10 @@ const Login = () => {
             </li>
           </ul>
         </div>
-        <form action="" className="login__form">
+        <form action="" className="login__form" onSubmit={handleSubmit(submit)}>
           <div className="form-group">
             <input
+              {...register("email")}
               id="email"
               type="text"
               className="form-input"
@@ -37,7 +62,9 @@ const Login = () => {
           </div>
           <div className="form-group">
             <input
+              {...register("password")}
               type="password"
+              id="password"
               className="form-input"
               placeholder=" "
               required
@@ -59,3 +86,16 @@ const Login = () => {
 };
 
 export default Login;
+
+// ecomerce
+
+// const [cartProducts, setCartProducts] = useState()
+
+//   useEffect(() => {
+//     const URL = ''
+//     axios.get()
+//       .then(res => setCartProducts(res.data))
+//       .catch(err => console.log(err))
+//   }, [])
+
+//
