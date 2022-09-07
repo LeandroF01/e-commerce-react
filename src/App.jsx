@@ -7,6 +7,8 @@ import { ProductDetail } from "./components/Routes/ProductDetail/ProductDetail";
 import { Header } from "./components/Shared/Header/Header";
 import { SignUp } from "./components/Routes/SignUp/SignUp";
 import { useEffect } from "react";
+import { ShoppingCart } from "./components/Shared/Header/ShoppingCart/ShoppingCart";
+import ProtectedRoutes from "./components/Routes/ProtectedRoutes/ProtectedRoutes";
 
 function App() {
   return (
@@ -16,8 +18,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path="/purchases" element={<Purchases />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/purchases" element={<Purchases />} />
+          <Route path="/cart" element={<ShoppingCart />} />
+        </Route>
       </Routes>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getIdProducts } from "../../../../store/slices/cartProducts.slice";
+import { postIdProducts } from "../../../../store/slices/cartProducts.slice";
 
 export const CardHome = ({ product }) => {
   const navigate = useNavigate();
@@ -12,9 +12,9 @@ export const CardHome = ({ product }) => {
 
   const dispatch = useDispatch();
 
-  const addToCart = () => {
+  const addProductCart = () => {
     if (localStorage.getItem("token")) {
-      dispatch(getIdProducts(product.id, 1));
+      dispatch(postIdProducts(product.id, 1));
     } else {
       navigate("/login");
     }
@@ -29,6 +29,11 @@ export const CardHome = ({ product }) => {
             src={product.productImgs[0]}
             alt=""
           />
+          <img
+            className="card-home__image hidden"
+            src={product.productImgs[1]}
+            alt=""
+          />
         </header>
         <div className="card-home__info">
           <h3 className="card-home__title">{product.title}</h3>
@@ -38,7 +43,7 @@ export const CardHome = ({ product }) => {
           </section>
         </div>
       </div>
-      <button onClick={addToCart} className="card-home__btn">
+      <button onClick={addProductCart} className="card-home__btn">
         <i className="fa-plus"></i>
       </button>
     </article>

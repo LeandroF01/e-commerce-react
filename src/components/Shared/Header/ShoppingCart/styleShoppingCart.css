@@ -1,13 +1,3 @@
-.container__shopping-cart {
-  position: fixed;
-  width: 22em;
-  height: 100vh;
-  right: 0;
-  z-index: 1;
-}
-.close-shopping {
-  display: none;
-}
 .shopping-cart__total {
   display: flex;
   gap: 10em;
@@ -17,8 +7,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  margin-top: 5em;
   background: rgb(255, 255, 255);
   box-shadow: var(--shadow-elevation-shopping);
   height: 100%;
@@ -27,7 +15,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  position: fixed;
   height: 8em;
   bottom: 0;
 }
@@ -39,4 +26,12 @@
   height: 3em;
   margin: 1em 0;
   cursor: pointer;
+}
+.cart-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 60em;
+  gap: 1em;
 }
