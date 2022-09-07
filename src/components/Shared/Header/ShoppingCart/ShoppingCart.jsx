@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getItemProducts } from "../../../../store/slices/cartProducts.slice";
 import { CartItem } from "../../../Routes/CartItem/CartItem";
 import "./styleShoppingCart.css";
 
@@ -22,6 +23,32 @@ export const ShoppingCart = () => {
     );
   }, [cartItem]);
 
+  const dispatch = useDispatch();
+  const handleCheckout = () => {
+    const URL = "https://ecommerce-api-react.herokuapp.com/api/v1/purchases";
+    const obj = {
+      street: "Green St. 1456",
+      colony: "Southwest",
+      zipCode: 12345,
+      city: "USA",
+      references: "Some references",
+    };
+    fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(obj),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        dispatch(getItemProducts());
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <section className="section__shopping-cart">
       <div className="shopping-cart ">
@@ -39,7 +66,9 @@ export const ShoppingCart = () => {
             </span>
           </div>
 
-          <button className="shopping-cart__info-purchase__btn">
+          <button
+            onClick={handleCheckout}
+            className="shopping-cart__info-purchase__btn">
             Checkout
           </button>
         </footer>

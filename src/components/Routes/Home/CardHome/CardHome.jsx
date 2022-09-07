@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { postIdProducts } from "../../../../store/slices/cartProducts.slice";
 
-export const CardHome = ({ product }) => {
+export const CardHomeProducts = ({ product }) => {
   const navigate = useNavigate();
 
   const handdleClick = () => {
@@ -49,3 +49,5 @@ export const CardHome = ({ product }) => {
     </article>
   );
 };
+
+export const CardHome = React.memo(CardHomeProducts);
