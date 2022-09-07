@@ -1,6 +1,7 @@
 .home {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .home__container-card {
@@ -8,13 +9,14 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 70em;
-  margin: 10em 0;
+  margin: 7em auto;
   gap: 1.5em;
 }
 
 .card-home__header {
   width: 100%;
   height: 15em;
+  position: relative;
 }
 .card-home {
   display: flex;
@@ -37,6 +39,7 @@
   aspect-ratio: 1;
   object-fit: contain;
   margin: 1em auto;
+  transition: 1s ease-in;
 }
 
 .card-home__info {
@@ -84,4 +87,17 @@
 .card-home__price-value {
   font-size: 1.1em;
   font-weight: 600;
+}
+
+.hidden {
+  position: absolute;
+  top: -1em;
+  right: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.card-home__header:hover .hidden {
+  opacity: 1;
+  background: white;
 }

@@ -22,8 +22,13 @@ export const ProductDetail = () => {
     <article className="prodruct-detail__article">
       <section className="product-detail">
         <header className="product-detail__header">
+<<<<<<< HEAD
           <Carousel showArrows={true} className='product-detail__Carousel'>
             <div className="product-detail__simiCart">
+=======
+          <Carousel showArrows={true}>
+            <div>
+>>>>>>> 55ffc152e80c460a759a249ef445d4816385a468
               <img
                 className="product-detail__img"
                 src={detail?.data.product.productImgs[0]}
