@@ -1,0 +1,27 @@
+.form-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: var(--shadow-elevation);
+  background: var(--bg-white);
+  padding: 2em;
+  border-radius: 0.4em;
+  border: 1px solid rgba(128, 128, 128, 0.268);
+}
+.form-user-image {
+  width: 7em;
+  height: auto;
+  aspect-ratio: 1;
+}
+.fa-circle-check {
+  color: rgb(10, 160, 10);
+}
+.form-user__btn {
+  color: rgb(75, 116, 218);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1em;
+}
