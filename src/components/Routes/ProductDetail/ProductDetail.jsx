@@ -26,8 +26,6 @@ export const ProductDetail = () => {
           <Carousel showArrows={true} className='product-detail__Carousel'>
             <div className="product-detail__simiCart">
 =======
-          <Carousel showArrows={true}>
-            <div>
 >>>>>>> 55ffc152e80c460a759a249ef445d4816385a468
               <img
                 className="product-detail__img"
