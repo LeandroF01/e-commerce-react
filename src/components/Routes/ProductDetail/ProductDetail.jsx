@@ -3,10 +3,10 @@ import useFetch from "../../../hooks/Fetch/useFetch";
 import { Carousel } from "react-responsive-carousel";
 import "../ProductDetail/styleProduct.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import SimilaritiesCart from "./SimilaritiesCart";
 
-export const ProductDetail = ({ product }) => {
+export const ProductDetail = () => {
   const detail = useFetch();
-  console.log(detail);
 
   const [counter, setCounter] = useState(0);
 
@@ -22,8 +22,11 @@ export const ProductDetail = ({ product }) => {
     <article className="prodruct-detail__article">
       <section className="product-detail">
         <header className="product-detail__header">
-          <Carousel showArrows={true}>
-            <div>
+<<<<<<< HEAD
+          <Carousel showArrows={true} className='product-detail__Carousel'>
+            <div className="product-detail__simiCart">
+=======
+>>>>>>> 55ffc152e80c460a759a249ef445d4816385a468
               <img
                 className="product-detail__img"
                 src={detail?.data.product.productImgs[0]}
@@ -73,6 +76,7 @@ export const ProductDetail = ({ product }) => {
           {detail?.data.product.price}
         </div>
         <button className="product-detail__btn">Add to cart +</button>
+        <SimilaritiesCart  productInfo={detail?.data}/>
       </section>
     </article>
   );
