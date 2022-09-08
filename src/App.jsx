@@ -6,17 +6,13 @@ import { Purchases } from "./components/Routes/Purchases/Purchases";
 import { ProductDetail } from "./components/Routes/ProductDetail/ProductDetail";
 import { Header } from "./components/Shared/Header/Header";
 import { SignUp } from "./components/Routes/SignUp/SignUp";
-<<<<<<< HEAD
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getAllProducts } from "./store/slices/products.slice";
-=======
-import { useEffect } from "react";
-import { ShoppingCart } from "./components/Shared/Header/ShoppingCart/ShoppingCart";
-import ProtectedRoutes from "./components/Routes/ProtectedRoutes/ProtectedRoutes";
-import User from "./components/Routes/User/User";
 import RegisterUser from "./components/Routes/FormLogin/RegisterUser";
->>>>>>> 55ffc152e80c460a759a249ef445d4816385a468
+import ProtectedRoutes from "./components/Routes/ProtectedRoutes/ProtectedRoutes"
+import {ShoppingCart} from "./components/Shared/Header/ShoppingCart/ShoppingCart"
+import User from "./components/Routes/User/User";
 
 function App() {
   
