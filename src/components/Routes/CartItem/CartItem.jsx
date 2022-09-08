@@ -26,7 +26,7 @@ export const CartItem = () => {
   }, []);
 
   const cartItem = useSelector((state) => state.cartProductsSlice);
-  console.log(cartItem);
+
   return (
     <section className="cart-item">
       {cartItem?.map((product) => (

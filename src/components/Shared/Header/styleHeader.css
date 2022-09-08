@@ -34,14 +34,10 @@
   background: var(--cl-violet_nav__hover);
 }
 
-.fa-regular,
-.fa-solid {
-  font-size: 1.4em;
-  cursor: pointer;
-}
-
 .fa-user,
 .fa-credit-card,
 .fa-bag-shopping {
   color: var(--cl-grey-icon);
+  font-size: 1.4em;
+  cursor: pointer;
 }

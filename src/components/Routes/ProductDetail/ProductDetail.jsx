@@ -4,6 +4,8 @@ import { Carousel } from "react-responsive-carousel";
 import "../ProductDetail/styleProduct.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SimilaritiesCart from "./SimilaritiesCart";
+import { useDispatch } from "react-redux";
+import { postIdProducts } from "../../../store/slices/cartProducts.slice";
 
 export const ProductDetail = () => {
   const detail = useFetch();
@@ -12,9 +14,20 @@ export const ProductDetail = () => {
 
   const handlePlus = () => setCounter(counter + 1);
 
+  const dispatch = useDispatch();
+
   const handleMinus = () => {
     if (counter - 1 >= 0) {
       setCounter(counter - 1);
+    }
+  };
+
+  const handdleAdd = () => {
+    const id = detail.data.product.id;
+    if (localStorage.getItem("token")) {
+      dispatch(postIdProducts(id, counter));
+    } else {
+      navigate("/login");
     }
   };
 
@@ -72,7 +85,9 @@ export const ProductDetail = () => {
           <h3 className="product-detail__price-title">price</h3>$
           {detail?.data.product.price}
         </div>
-        <button className="product-detail__btn">Add to cart +</button>
+        <button onClick={handdleAdd} className="product-detail__btn">
+          Add to cart +
+        </button>
         <SimilaritiesCart productInfo={detail?.data} />
       </section>
     </article>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import PurchaseHistory from "./PurchaseHistory/PurchaseHistory";
 
 export const Purchases = () => {
@@ -18,15 +19,19 @@ export const Purchases = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-  console.log(purchases);
+
   return (
     <section className="container__purchases">
+      <div className="container__purchases-link">
+        <Link to="/">Home</Link>
+        <i className="fa-solid fa-location-pin"></i>
+        <span>Purchases</span>
+      </div>
+      <h3>My purchases</h3>
       <article className="container__purchases-article">
-        <div>
-          {purchases?.map((purchase) => (
-            <PurchaseHistory key={purchase.id} purchase={purchase} />
-          ))}
-        </div>
+        {purchases?.map((purchase) => (
+          <PurchaseHistory key={purchase.id} purchase={purchase} />
+        ))}
       </article>
     </section>
   );
