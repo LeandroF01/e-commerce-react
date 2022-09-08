@@ -40,3 +40,14 @@
   font-size: 1em;
   font-weight: 600;
 }
+.cart-item__quantity {
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 0.2em;
+  margin: 0.5em;
+  width: 4em;
+}
+.cart-item__quantity-num {
+  font-size: 1em;
+  font-weight: 500;
+}

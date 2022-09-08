@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 70em;
+  max-width: 80em;
   margin: 7em auto;
   gap: 1.5em;
 }
