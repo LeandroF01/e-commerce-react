@@ -88,6 +88,8 @@ export const ProductDetail = () => {
         <button onClick={handdleAdd} className="product-detail__btn">
           Add to cart +
         </button>
+      </section>
+      <section className="similarities-cart">
         <SimilaritiesCart productInfo={detail?.data} />
       </section>
     </article>

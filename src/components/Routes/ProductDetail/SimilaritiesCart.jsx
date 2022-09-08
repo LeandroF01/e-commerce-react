@@ -17,7 +17,7 @@ const SimilaritiesCart = ({ productInfo }) => {
   }, [productInfo]);
 
   return (
-    <div>
+    <div className="similarities-cart__item">
       {filterProducts?.map((product) => {
         if (product.title !== productInfo.title) {
           return <CardHome key={product.id} product={product} />;
