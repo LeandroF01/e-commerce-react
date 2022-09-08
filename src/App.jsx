@@ -15,7 +15,6 @@ import {ShoppingCart} from "./components/Shared/Header/ShoppingCart/ShoppingCart
 import User from "./components/Routes/User/User";
 
 function App() {
-  
   const dispatch = useDispatch();
 
   useEffect(() => {
