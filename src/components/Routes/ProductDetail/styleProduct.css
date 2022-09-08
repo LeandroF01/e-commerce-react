@@ -104,3 +104,8 @@
   flex-wrap: wrap;
   margin: 20px;
 }
+.product-detail__Carousel{
+  background-color: aqua;
+  /* max-width: 50%; */
+
+}
