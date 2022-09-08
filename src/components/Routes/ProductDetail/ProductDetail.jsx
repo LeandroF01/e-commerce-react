@@ -22,7 +22,7 @@ export const ProductDetail = () => {
     <article className="prodruct-detail__article">
       <section className="product-detail">
         <header className="product-detail__header">
-          <Carousel showArrows={true} className='product-detail__Carousel'>
+          <Carousel showArrows={true} className="product-detail__Carousel">
             <div className="product-detail__simiCart">
               <img
                 className="product-detail__img"
@@ -30,14 +30,14 @@ export const ProductDetail = () => {
                 alt=""
               />
             </div>
-            <div>
+            <div className="product-detail__simiCart">
               <img
                 className="product-detail__img"
                 src={detail?.data.product.productImgs[1]}
                 alt=""
               />
             </div>
-            <div>
+            <div className="product-detail__simiCart">
               <img
                 className="product-detail__img"
                 src={detail?.data.product.productImgs[2]}
@@ -73,7 +73,7 @@ export const ProductDetail = () => {
           {detail?.data.product.price}
         </div>
         <button className="product-detail__btn">Add to cart +</button>
-        <SimilaritiesCart  productInfo={detail?.data}/>
+        <SimilaritiesCart productInfo={detail?.data} />
       </section>
     </article>
   );

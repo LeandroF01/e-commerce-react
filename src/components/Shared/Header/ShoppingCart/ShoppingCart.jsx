@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getItemProducts } from "../../../../store/slices/cartProducts.slice";
 import { CartItem } from "../../../Routes/CartItem/CartItem";
+import { useNavigate } from "react-router-dom";
 import "./styleShoppingCart.css";
 
 export const ShoppingCart = () => {
@@ -24,6 +25,8 @@ export const ShoppingCart = () => {
   }, [cartItem]);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleCheckout = () => {
     const URL = "https://ecommerce-api-react.herokuapp.com/api/v1/purchases";
     const obj = {
@@ -41,12 +44,11 @@ export const ShoppingCart = () => {
       },
       body: JSON.stringify(obj),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         dispatch(getItemProducts());
       })
       .catch((err) => console.log(err));
+    navigate("/purchases");
   };
 
   return (

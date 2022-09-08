@@ -27,22 +27,15 @@
   margin-left: 7em;
 }
 /* ...Imagenes...*/
-.product-detail__header {
-  width: 100%;
-  height: 100%;
+.product-detail__simiCart {
+  height: 20em;
 }
 .product-detail__img {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  border: 4px solid transparent;
-  transition: border .3s ease-out;
-  width: 100px;
-  background: transparent;
-  cursor: pointer;
-  transition: transform .3s ease-out;
-  white-space: nowrap;
-  object-fit: cover;
+  display: block;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  margin: auto;
 }
 
 /*...title..*/
@@ -104,15 +97,10 @@
   transform: scale(1.04);
   transition: transform 200ms ease;
 }
-.card-home{
+.card-home {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin: 20px;
-}
-.product-detail__Carousel{
-  background-color: aqua;
-  /* max-width: 50%; */
-
 }

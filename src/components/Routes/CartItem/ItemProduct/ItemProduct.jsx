@@ -30,8 +30,10 @@ export const ItemProduct = ({ product }) => {
         onClick={() => dispatch(deletProduct(product.id))}>
         <i className="fa-solid fa-ban"></i>
       </button>
-      <div>
-        <span>{product.productsInCart?.quantity}</span>
+      <div className="cart-item__quantity">
+        <span className="cart-item__quantity-num">
+          {product.productsInCart?.quantity}
+        </span>
       </div>
 
       <div className="cart-item__container-total">
