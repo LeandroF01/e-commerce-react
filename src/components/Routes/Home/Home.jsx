@@ -31,7 +31,7 @@ const Home = () => {
             </button>
           </div>
 
-          <Suspense fallback={<h3>loading</h3>}>
+          <Suspense fallback={null}>
             <div className="home__container-card">
               {elements
                 ? elements?.map((product) => (

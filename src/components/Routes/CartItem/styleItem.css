@@ -33,6 +33,7 @@
   background: none;
   border: none;
   color: red;
+  cursor: pointer;
 }
 .cart-item__container-total {
   text-align: end;
