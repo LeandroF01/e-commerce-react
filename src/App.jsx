@@ -10,8 +10,8 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getAllProducts } from "./store/slices/products.slice";
 import RegisterUser from "./components/Routes/FormLogin/RegisterUser";
-import ProtectedRoutes from "./components/Routes/ProtectedRoutes/ProtectedRoutes"
-import {ShoppingCart} from "./components/Shared/Header/ShoppingCart/ShoppingCart"
+import ProtectedRoutes from "./components/Routes/ProtectedRoutes/ProtectedRoutes";
+import { ShoppingCart } from "./components/Shared/Header/ShoppingCart/ShoppingCart";
 import User from "./components/Routes/User/User";
 
 function App() {

@@ -1,25 +1,8 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { postIdProducts } from "../../../../store/slices/cartProducts.slice";
+import React from "react";
+import useAddProduct from "../../../../hooks/ReduxData/useAddProduct";
 
-export const CardHomeProducts = ({ product }) => {
-  const navigate = useNavigate();
-
-  const handdleClick = () => {
-    navigate(`/product/${product.id}`);
-  };
-
-  const dispatch = useDispatch();
-
-  const addProductCart = () => {
-    if (localStorage.getItem("token")) {
-      dispatch(postIdProducts(product.id, 1));
-    } else {
-      navigate("/login");
-    }
-  };
-
+export const CardHome = ({ product }) => {
+  const { handdleClick, addProductCart } = useAddProduct(product);
   return (
     <article className="card-home">
       <div onClick={handdleClick}>
@@ -50,4 +33,4 @@ export const CardHomeProducts = ({ product }) => {
   );
 };
 
-export const CardHome = React.memo(CardHomeProducts);
+export default CardHome;

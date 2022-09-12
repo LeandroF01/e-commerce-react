@@ -18,7 +18,7 @@
   flex-direction: column;
   background: var(--bg-white);
   width: 25em;
-  height: 35em;
+  height: auto;
   border-radius: 0.3em;
   border: 0.1em solid var(--cl-border__login);
   box-shadow: var(--shadow-elevation-login);
@@ -54,4 +54,11 @@
   color: var(--cl-text-grey);
   margin-left: 2em;
   margin-bottom: 1em;
+}
+
+.form__errors {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: rgb(138, 127, 239);
+  margin: 0;
 }

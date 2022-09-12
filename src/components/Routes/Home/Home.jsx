@@ -1,62 +1,47 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts } from "../../../store/slices/products.slice";
-import { CardHome } from "./CardHome/CardHome";
+import React, { lazy, Suspense } from "react";
+import useGetAllProducts from "../../../hooks/ReduxData/useGetAllProducts";
 import "./CardHome/styleHome.css";
-import { FilterProducts } from "./Filter/FilterProducts";
-import { Search } from "./Search/Search";
-
+import FilterProducts from "./Filter/FilterProducts";
+import Search from "./Search/Search";
 const Home = () => {
-  const dispatch = useDispatch();
-  const [productsCategory, setProductsCategory] = useState("");
-  const [numMax, setNumMax] = useState();
-  const [numMin, setNumMin] = useState();
-  const [search, setSearch] = useState("");
+  const {
+    elements,
+    setSearch,
+    setMinMaxNumber,
+    products,
+    open,
+    handleOpen,
+    handdleClose,
+  } = useGetAllProducts();
 
-  useEffect(() => {
-    dispatch(getAllProducts());
-  }, []);
-
-  const products = useSelector((state) => state.productsSlice);
-  let elemets;
-  if (productsCategory) {
-    const filterProducts = products?.filter(
-      (product) => product.category.name == productsCategory
-    );
-    elemets = filterProducts;
-  } else if (numMax && numMin) {
-    const priceFilter = products?.filter(
-      (product) => product.price > numMin && product.price < numMax
-    );
-    elemets = priceFilter;
-  } else if (search) {
-    const productSearch = products?.filter((product) => {
-      const name = product.title.toLowerCase();
-      const nameCondition = search.toLowerCase();
-
-      if (name.includes(nameCondition)) return product;
-    });
-    elemets = productSearch;
-  } else {
-    elemets = products;
-  }
+  const CardHome = lazy(() => import("./CardHome/CardHome"));
 
   return (
     <section className="home">
-      <aside className="container__filter">
-        <FilterProducts
-          setNumMax={setNumMax}
-          setNumMin={setNumMin}
-          setProductsCategory={setProductsCategory}
-        />
+      <aside className={`container__filter ${open && "open-modal"}`}>
+        <FilterProducts setMinMaxNumber={setMinMaxNumber} />
       </aside>
-      <div className="container__search">
-        <Search setSearch={setSearch} products={products} />
-        <div className="home__container-card">
-          {elemets?.map((product) => (
-            <CardHome key={product.id} product={product} />
-          ))}
+
+      <div onClick={handdleClose}>
+        <div className="container__search">
+          <div className="serch__btn-modal-conatiner">
+            <Search setSearch={setSearch} products={products} />
+            <button className="modal__filter-btn" onClick={handleOpen}>
+              <i className="fa-solid fa-filter"></i>
+            </button>
+          </div>
+
+          <Suspense fallback={<h3>loading</h3>}>
+            <div className="home__container-card">
+              {elements
+                ? elements?.map((product) => (
+                    <CardHome key={product.id} product={product} />
+                  ))
+                : products?.map((product) => (
+                    <CardHome key={product.id} product={product} />
+                  ))}
+            </div>
+          </Suspense>
         </div>
       </div>
     </section>

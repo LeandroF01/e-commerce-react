@@ -35,3 +35,5 @@ export const Header = () => {
     </section>
   );
 };
+
+export default React.memo(Header);

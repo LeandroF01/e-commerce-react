@@ -31,3 +31,40 @@
 .fa-magnifying-glass {
   color: white;
 }
+.modal__filter-btn {
+  display: none;
+}
+.serch__btn-modal-conatiner {
+  position: relative;
+}
+
+@media (max-width: 950px) {
+  .modal__filter-btn {
+    display: block;
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    top: 2.5em;
+    right: 0;
+    cursor: pointer;
+    color: var(--cl-text-grey);
+  }
+  .modal__filter-btn:hover {
+    color: var(--cl-text-violet);
+  }
+  .container__filter {
+    display: none;
+  }
+
+  .open-modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+  }
+  .filter-products__categories-price {
+    background: rgb(255, 255, 255);
+    box-shadow: var(--shadow-elevation-filter);
+    transition: 5s traslate;
+  }
+}

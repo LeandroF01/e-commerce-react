@@ -1,22 +1,8 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { deletProduct } from "../../../../store/slices/cartProducts.slice";
 
 export const ItemProduct = ({ product }) => {
-  // const delteItem = useCallback(() => {
-  //   const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/cart/${product.id}`;
-  //   fetch(URL, {
-  //     method: "DELETE",
-  //     headers: {
-  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //     },
-  //   })
-  //     .then(() => {
-  //       getItem();
-  //     })
-  //     .catch((err) => console.log(err));
-  // });
-
   const dispatch = useDispatch();
 
   return (

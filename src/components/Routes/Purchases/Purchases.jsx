@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useGetPurchases } from "../../../hooks/Purchases/useGetPurchases";
 import PurchaseHistory from "./PurchaseHistory/PurchaseHistory";
 
 export const Purchases = () => {
-  const [purchases, setPurchases] = useState();
-
-  useEffect(() => {
-    const URL = "https://ecommerce-api-react.herokuapp.com/api/v1/purchases";
-    fetch(URL, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setPurchases(data.data.purchases);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  const purchases = useGetPurchases();
 
   return (
     <section className="container__purchases">

@@ -27,4 +27,4 @@ const SimilaritiesCart = ({ productInfo }) => {
   );
 };
 
-export default SimilaritiesCart;
+export default React.memo(SimilaritiesCart);

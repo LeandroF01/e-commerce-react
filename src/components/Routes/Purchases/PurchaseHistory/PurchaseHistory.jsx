@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
+import useHistory from "../../../../hooks/Purchases/useHistory";
 import "./stylePurchase.css";
 
 const PurchaseHistory = ({ purchase }) => {
-  const [date, setDate] = useState("");
-  useEffect(() => {
-    const arr = Date(purchase.createdAt).toString().split(" ");
-    console.log(arr);
-    setDate(arr);
-  }, []);
+  const date = useHistory(purchase);
   return (
     <article className="purchases">
       <span className="purchases__date">

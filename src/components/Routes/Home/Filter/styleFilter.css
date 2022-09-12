@@ -11,6 +11,7 @@
   position: fixed;
   height: 100%;
   width: 20em;
+  left: 0;
 }
 
 .filter-products__price {
@@ -66,4 +67,10 @@
 
 .filter-products__categories-btn:focus::before {
   content: url("./img/icons8-comprobado.png");
+}
+
+.title-filter {
+  text-align: center;
+  font-size: 1em;
+  margin: 0%;
 }

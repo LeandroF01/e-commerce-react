@@ -60,12 +60,13 @@
 
 .form-group {
   position: relative;
+  margin: 1.3em 0;
 }
 
 .form-input {
   width: 100%;
   height: 1.8em;
-  margin: 1.4em 0;
+
   border: none;
   border-bottom: 1px solid var(--cl-border__line);
   background: none;
@@ -76,7 +77,7 @@
 .form-label {
   position: absolute;
   font-size: 1em;
-  top: 1em;
+  top: 0.5em;
   left: 0.2em;
   color: var(--cl-text-grey);
   pointer-events: none;
@@ -84,7 +85,7 @@
 
 .form-input:focus + .form-label,
 .form-input:valid + .form-label {
-  top: -0.1em;
+  top: -1.2em;
   scale: 0.8;
   animation: 0.5s ease transform;
   color: var(--cl-text-violet);
@@ -120,4 +121,10 @@
   color: var(--cl-text-grey);
   margin-left: 2em;
   margin-bottom: 1em;
+}
+
+.thumb {
+  object-fit: contain;
+  width: 10em;
+  height: 5em;
 }

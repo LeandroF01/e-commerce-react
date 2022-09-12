@@ -1,20 +1,18 @@
 import React from "react";
+import useHanddleSearch from "../../../../hooks/Handdle/useHanddleSearch";
 import "./styleSearch.css";
 
-export const Search = ({ setSearch, products }) => {
-  const handdleSubmit = (e) => {
-    setSearch(e.target.value);
-    e.target.value = "";
-  };
+const Search = ({ setSearch, products }) => {
+  const handdleSubmit = useHanddleSearch(setSearch);
 
   return (
-    <form className="form-search" onChange={handdleSubmit}>
+    <div className="form-search">
       <input
+        onChange={handdleSubmit}
         id="searchInput"
         type="text"
         placeholder="Search Name or Category"
         list="autocomplete"
-        autoComplete="none"
         className="form-search__input"
       />
       <button className="form-search__btn">
@@ -27,6 +25,8 @@ export const Search = ({ setSearch, products }) => {
           </option>
         ))}
       </datalist>
-    </form>
+    </div>
   );
 };
+
+export default Search;

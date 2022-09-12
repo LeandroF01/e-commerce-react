@@ -1,40 +1,17 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./styleRegister.css";
+import usePostRegister from "../../../hooks/Fetch/usePostRegister";
 
 const RegisterUser = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate();
-  const submit = (data) => {
-    const URL = "https://ecommerce-api-react.herokuapp.com/api/v1/users/login";
-    fetch(URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        localStorage.setItem("token", data.data.token);
-        localStorage.setItem("firstName", data.data.user.firstName);
-        localStorage.setItem("lastName", data.data.user.lastName);
-      })
-      .catch((err) => console.log(err));
-
-    navigate("/");
-    reset({
-      email: "",
-      password: "",
-    });
-  };
+  const submit = usePostRegister();
 
   return (
     <section className="login">
