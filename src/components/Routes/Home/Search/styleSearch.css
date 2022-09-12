@@ -27,6 +27,7 @@
   border: none;
   background: var(--cl-btn__hover);
   border-radius: 0 1em 1em 0;
+  cursor: pointer;
 }
 .fa-magnifying-glass {
   color: white;
