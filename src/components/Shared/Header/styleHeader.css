@@ -27,6 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   height: 100%;
   width: 5em;
 }
@@ -40,4 +41,20 @@
   color: var(--cl-grey-icon);
   font-size: 1.4em;
   cursor: pointer;
+}
+
+.item__circle-shopping {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgb(235, 23, 23);
+  color: var(--cl-text-white);
+  width: 1.1em;
+  height: 1.1em;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  top: 1.3em;
+  right: 1.4em;
 }

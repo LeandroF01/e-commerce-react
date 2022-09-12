@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useCartItem } from "../../../hooks/ReduxData/useCartItem";
 import logo from "./image/logo.png";
 import "./styleHeader.css";
 
 export const Header = () => {
+  const cartItem = useCartItem();
+
   return (
     <section className="section__header">
       <header className="header">
@@ -27,6 +30,7 @@ export const Header = () => {
             <li className="header__item">
               <NavLink to="/cart">
                 <i className="fa-solid fa-bag-shopping"></i>
+                <span className="item__circle-shopping">{cartItem.length}</span>
               </NavLink>
             </li>
           </ul>
