@@ -31,7 +31,7 @@ export const Header = () => {
               <NavLink to="/cart">
                 <i className="fa-solid fa-bag-shopping"></i>
                 <span className="item__circle-shopping">
-                  {cartItem?.length < 0 ? cartItem?.length : 0}
+                  {cartItem?.length > 0 ? cartItem?.length : 0}
                 </span>
               </NavLink>
             </li>
