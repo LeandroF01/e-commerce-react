@@ -5,11 +5,10 @@ import { getItemProducts } from "../../store/slices/cartProducts.slice";
 export const useCartItem = () => {
   const dispatch = useDispatch();
 
+  const cartItem = useSelector((state) => state.cartProductsSlice);
   useEffect(() => {
     dispatch(getItemProducts());
   }, []);
-
-  const cartItem = useSelector((state) => state.cartProductsSlice);
 
   return cartItem;
 };

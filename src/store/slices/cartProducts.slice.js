@@ -15,18 +15,20 @@ export default cartProductsSlice.reducer;
 export const getItemProducts = () => (dispatch) => {
   const URL = "https://ecommerce-api-react.herokuapp.com/api/v1/cart";
   return fetch(URL, {
-    method: "GET",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   })
     .then((res) => res.json())
-    .then((data) => dispatch(setCartProducts(data.data.cart.products)))
-    .catch(() => dispatch(setCartProducts()));
+    .then((data) => {
+      dispatch(setCartProducts(data.data.cart.products));
+      console.log(data);
+    })
+    .catch(() => dispatch(setCartProducts([])));
 };
 
 export const postIdProducts = (productId, quantity) => (dispatch) => {
-  const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/cart`;
+  const URL = "https://ecommerce-api-react.herokuapp.com/api/v1/cart";
   const item = { id: productId, quantity };
 
   return fetch(URL, {
@@ -48,5 +50,29 @@ export const deletProduct = (id) => (dispatch) => {
     },
   })
     .then(() => dispatch(getItemProducts()))
+    .catch((err) => console.log(err));
+};
+
+export const getPurchases = () => (dispatch) => {
+  const URL = "https://ecommerce-api-react.herokuapp.com/api/v1/purchases";
+  const obj = {
+    street: "Green St. 1456",
+    colony: "Southwest",
+    zipCode: 12345,
+    city: "USA",
+    references: "Some references",
+  };
+  return fetch(URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify(obj),
+  })
+    .then(() => {
+      dispatch(getItemProducts());
+      dispatch(setCartProducts());
+    })
     .catch((err) => console.log(err));
 };

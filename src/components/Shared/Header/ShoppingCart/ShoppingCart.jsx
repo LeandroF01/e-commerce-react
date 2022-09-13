@@ -24,7 +24,7 @@ export const ShoppingCart = () => {
           </div>
 
           <button
-            onClick={handleCheckout}
+            onClick={() => handleCheckout()}
             className="shopping-cart__info-purchase__btn">
             Checkout
           </button>
