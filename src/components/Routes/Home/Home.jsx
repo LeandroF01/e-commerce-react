@@ -24,8 +24,8 @@ const Home = () => {
         <FilterProducts setMinMaxNumber={setMinMaxNumber} />
       </aside>
 
-      <div onClick={handdleClose}>
-        <div className="container__search">
+      <div className="container__search">
+        <div onClick={handdleClose}>
           <div className="serch__btn-modal-conatiner">
             <Search setSearch={setSearch} products={products} />
             <button className="modal__filter-btn" onClick={handleOpen}>
