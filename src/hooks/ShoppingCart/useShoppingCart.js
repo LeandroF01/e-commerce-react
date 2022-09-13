@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPurchases } from "../../store/slices/cartProducts.slice";
@@ -27,8 +28,13 @@ const useShoppingCart = () => {
   const navigate = useNavigate();
 
   const handleCheckout = () => {
-    dispatch(getPurchases());
     navigate("/purchases");
+    dispatch(getPurchases());
+
+    toast.success("Thanks for your purchase!", {
+      duration: 3000,
+      position: "top-center",
+    });
   };
 
   return { handleCheckout, totalPrice };

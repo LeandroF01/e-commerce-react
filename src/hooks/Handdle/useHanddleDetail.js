@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { postIdProducts } from "../../store/slices/cartProducts.slice";
@@ -26,6 +27,10 @@ export const useHanddleDetail = () => {
     } else {
       navigate("/login");
     }
+    toast.success("The product was added to the cart!", {
+      duration: 3000,
+      position: "top-center",
+    });
   };
 
   return { detail, handlePlus, handleMinus, counter, handdleAdd };

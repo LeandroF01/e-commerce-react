@@ -1,4 +1,5 @@
 import React from "react";
+import { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { deletProduct } from "../../../../store/slices/cartProducts.slice";
 
@@ -7,6 +8,7 @@ export const ItemProduct = ({ product }) => {
 
   return (
     <article className="cart-item__container">
+      <Toaster />
       <div className="cart-item__container-title">
         <span className="cart-item__brand">{product.brand}</span>
         <span className="cart-item__title">{product.title}</span>

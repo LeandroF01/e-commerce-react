@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from "react";
+import { Toaster } from "react-hot-toast";
 import useGetAllProducts from "../../../hooks/ReduxData/useGetAllProducts";
 import "./CardHome/styleHome.css";
 import FilterProducts from "./Filter/FilterProducts";
@@ -18,6 +19,7 @@ const Home = () => {
 
   return (
     <section className="home">
+      <Toaster />
       <aside className={`container__filter ${open && "open-modal"}`}>
         <FilterProducts setMinMaxNumber={setMinMaxNumber} />
       </aside>

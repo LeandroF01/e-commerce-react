@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 const cartProductsSlice = createSlice({
   name: "cartProducts",
@@ -49,7 +50,13 @@ export const deletProduct = (id) => (dispatch) => {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   })
-    .then(() => dispatch(getItemProducts()))
+    .then(() => {
+      toast.error("You have removed a product from the cart!", {
+        duration: 3000,
+        position: "top-center",
+      });
+      dispatch(getItemProducts());
+    })
     .catch((err) => console.log(err));
 };
 

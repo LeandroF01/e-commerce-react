@@ -5,6 +5,7 @@ import ProductDescription from "./ProductDescription";
 import { useHanddleDetail } from "../../../hooks/Handdle/useHanddleDetail";
 import ImageDetail from "./ImageDetail";
 import SimilaritiesCart from "./SimilaritiesCart";
+import { Toaster } from "react-hot-toast";
 
 export const ProductDetail = () => {
   const { detail, handlePlus, handleMinus, counter, handdleAdd } =
@@ -12,6 +13,7 @@ export const ProductDetail = () => {
 
   return (
     <article className="prodruct-detail__article">
+      <Toaster />
       <section className="product-detail">
         <header className="product-detail__header">
           <ImageDetail detail={detail} />
