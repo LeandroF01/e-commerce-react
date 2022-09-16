@@ -59,3 +59,9 @@
   right: 1.5em;
   font-size: 0.9em;
 }
+
+@media (max-width: 500px) {
+  .header__logo {
+    width: 9em;
+  }
+}

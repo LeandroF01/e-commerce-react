@@ -36,7 +36,13 @@
   display: none;
 }
 .serch__btn-modal-conatiner {
+  display: block;
+  margin: auto;
   position: relative;
+  height: auto;
+  width: 20em;
+}
+.close-modal {
 }
 
 @media (max-width: 950px) {
@@ -47,7 +53,7 @@
     border: none;
     font-size: 1.3em;
     top: 2.5em;
-    right: 0;
+    right: 2em;
     cursor: pointer;
     color: var(--cl-text-grey);
   }
