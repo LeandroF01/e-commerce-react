@@ -1,6 +1,7 @@
 import React from "react";
 
 export const FilterCategory = ({ handdleAll, category, handdleCategories }) => {
+  
   return (
     <div>
       <h5 className="title-filter">Categories</h5>
@@ -15,7 +16,7 @@ export const FilterCategory = ({ handdleAll, category, handdleCategories }) => {
         {category?.map((product) => (
           <li key={product.id} className="filter-products__categories-element">
             <button
-              className="filter-products__categories-btn"
+              className={`filter-products__categories-btn ${product.id}`}
               onClick={() => handdleCategories(product.id)}>
               {product.name}
             </button>

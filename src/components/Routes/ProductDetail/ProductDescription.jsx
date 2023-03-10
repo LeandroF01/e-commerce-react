@@ -10,9 +10,9 @@ const ProductDescription = ({
   return (
     <>
       <div>
-        <h2 className="product-detail__title">{detail?.data.product.title}</h2>
+        <h2 className="product-detail__title">{detail?.title}</h2>
         <div className="product-detail__description">
-          {detail?.data.product.description}
+          {detail?.description}
         </div>
       </div>
       <div className="product-detail__counter">
@@ -29,7 +29,7 @@ const ProductDescription = ({
       </div>
       <div className="product-detail__price">
         <h3 className="product-detail__price-title">Price</h3>$
-        {detail?.data.product.price}
+        {detail?.price}
       </div>
       <button onClick={handdleAdd} className="product-detail__btn">
         Add to cart +

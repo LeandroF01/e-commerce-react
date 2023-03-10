@@ -14,8 +14,11 @@ const Home = () => {
     handleOpen,
     handdleClose,
   } = useGetAllProducts();
-
+  
+ 
   const CardHome = lazy(() => import("./CardHome/CardHome"));
+
+ 
 
   return (
     <section className="home">
@@ -40,7 +43,7 @@ const Home = () => {
                     <CardHome key={product.id} product={product} />
                   ))
                 : products?.map((product) => (
-                    <CardHome key={product.id} product={product} />
+                    <CardHome key={product.id} product={product}  />
                   ))}
             </div>
           </Suspense>

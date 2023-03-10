@@ -7,6 +7,8 @@ import PurchaseHistory from "./PurchaseHistory/PurchaseHistory";
 export const Purchases = () => {
   const purchases = useGetPurchases();
 
+  
+
   return (
     <section className="container__purchases">
       <Toaster />
@@ -18,7 +20,7 @@ export const Purchases = () => {
       <h3>My purchases</h3>
       <article className="container__purchases-article">
         {purchases?.map((purchase) => (
-          <PurchaseHistory key={purchase.id} purchase={purchase} />
+          <PurchaseHistory key={purchase.id} purchase={purchases} />
         ))}
       </article>
     </section>

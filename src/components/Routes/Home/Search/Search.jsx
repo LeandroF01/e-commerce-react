@@ -5,6 +5,8 @@ import "./styleSearch.css";
 const Search = ({ setSearch, products }) => {
   const handdleSubmit = useHanddleSearch(setSearch);
 
+  
+
   return (
     <div className="form-search">
       <input

@@ -7,21 +7,21 @@ const ImageDetail = ({ detail }) => {
       <div className="product-detail__simiCart">
         <img
           className="product-detail__img"
-          src={detail?.data.product.productImgs[0]}
+          src={detail?.images[0].url}
           alt=""
         />
       </div>
       <div className="product-detail__simiCart">
         <img
           className="product-detail__img"
-          src={detail?.data.product.productImgs[1]}
+          src={detail?.images[1].url}
           alt=""
         />
       </div>
       <div className="product-detail__simiCart">
         <img
           className="product-detail__img"
-          src={detail?.data.product.productImgs[2]}
+          src={detail?.images[2].url}
           alt=""
         />
       </div>

@@ -1,20 +1,22 @@
 import React from "react";
 import useAddProduct from "../../../../hooks/ReduxData/useAddProduct";
 
-export const CardHome = ({ product }) => {
+export const CardHome = ({ product}) => {
   const { handdleClick, addProductCart } = useAddProduct(product);
+
+  
   return (
     <article className="card-home">
       <div onClick={handdleClick}>
         <header className="card-home__header">
           <img
             className="card-home__image"
-            src={product.productImgs[0]}
+            src={product.images[0].url}
             alt=""
           />
           <img
             className="card-home__image hidden"
-            src={product.productImgs[1]}
+            src={product.images[1].url}
             alt=""
           />
         </header>
